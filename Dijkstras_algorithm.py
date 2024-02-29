@@ -78,10 +78,11 @@ class Graph:
             link_this_noda = [self.graph[ind_nodes].index(i) for i in self.graph[ind_nodes] if i != 0]
             print(f'show_link  {link_this_noda}')
             for links_node in link_this_noda:
-                if dist[links_node] > self.graph[links_node][ind_nodes]:
-                    print(dist[links_node], self.graph[links_node][ind_nodes])
-                    # w = self.graph[links_node][ind_nodes] + 
-                    
+                if links_node not in viewed_node:                    
+                    print(f'linked_nods --->>> {links_node}')
+                
+                
+                viewed_node.add(links_node)
 
         print(dist)
 
